@@ -18,8 +18,29 @@
             int[] cards = dealCards();
             bool gameWon = false;
             // add your code here
-
-
+            
+            for (int i = 0; i <= cards.Length - 5; i++)
+			    {
+				    Console.WriteLine($"check: {cards[i]}, {cards[i+1]}, {cards[i+2]}, {cards[i+3]}, {cards[i+4]}");
+				    int count = 0;
+				    for (int j = 0; j < 4; j++)
+    				{
+    					if (cards[i + j + 1] != cards[i + j] + 1)
+    					{				
+    						break;
+    					}	
+    					else 
+    					{
+    						count++;
+    					}
+    				}	
+    				if (count == 4)
+    				{
+    					gameWon = true;
+    					break;
+				    }
+			    }
+            
             // end of your code
             Console.WriteLine(gameWon);
         }
